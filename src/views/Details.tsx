@@ -27,7 +27,7 @@ const Details = () => {
     const fetchEpisode = async (): Promise<void> => {
       try {
         const resp = await fetch(
-          `http://api.tvmaze.com/shows/530/episodebynumber?season=${season}&number=${episode}`
+          `https://api.tvmaze.com/shows/530/episodebynumber?season=${season}&number=${episode}`
         );
         const data = await resp.json();
         data.status === 404 ? history.push("/NotFound") : setEpisodeData(data);
